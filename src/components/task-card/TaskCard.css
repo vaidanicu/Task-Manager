@@ -14,17 +14,6 @@
 .card-wapper p {
   margin: 0;
 }
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.card-header p {
-  font-size: 14px;
-  line-height: 17px;
-  color: #b9b9b9;
-  font-weight: 700;
-}
 
 .card-content {
   text-align: left;
@@ -46,33 +35,4 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.due-date p:first-child {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.02em;
-  color: #999999;
-}
-
-.due-date p:last-child {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: -0.03em;
-  color: #16171d;
-}
-
-.badge {
-  background-color: #f2f2f2;
-  padding: 5px 10px;
-  border-radius: 12px;
-}
-
-.badge p {
-  color: #808080;
-  font-weight: 700;
-  line-height: 14px;
-  font-size: 12px;
 }
