@@ -5,10 +5,12 @@ import DateContainer from "../date-container/DateContainer";
 
 function TaskCard(props) {
   const [counter, setCounter] = useState(0);
-  const [taskId, setTaskId] = useState();
+
+  console.log("Render" + counter + "" + props.Id);
 
   const handleClick = () => {
     setCounter(counter + 1);
+    console.log("cnt", counter);
   };
 
   return (
