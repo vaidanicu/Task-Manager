@@ -1,13 +1,14 @@
+import React, { useState } from "react";
 import Badge from "../badge/badge";
 import "../task-card/TaskCard.css";
 import DateContainer from "../date-container/DateContainer";
 
 function TaskCard(props) {
-  let taskId = props.id;
+  const [taskId, setTaskId] = useState(props.Id);
 
   const handleClick = () => {
-    console.log("Click" + props.Id);
-    taskId = taskId + "Clicked!";
+    setTaskId("Clicked!");
+    console.log(taskId);
   };
 
   return (

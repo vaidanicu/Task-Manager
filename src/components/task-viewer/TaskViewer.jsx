@@ -11,7 +11,7 @@ function TaskViewer(props) {
               //sau ley={item.id}
               key={index}
               Id={item.id}
-              Status={item.Status}
+              status={item.status}
               Name={item.Name}
               dueDate={item.dueDate}
             />
