@@ -37,28 +37,28 @@ function App() {
   ];
 
   //afisare metoda din biblioteca React
-  return React.createElement(
-    `div`,
-    {
-      className: "App",
-    },
-    React.createElement(
-      `div`,
-      { className: "app-content" },
-      React.createElement("h1", {}, ""),
-      React.createElement(TaskViewer, { taskList: data })
-    )
-  );
+  // return React.createElement(
+  //   `div`,
+  //   {
+  //     className: "App",
+  //   },
+  //   React.createElement(
+  //     `div`,
+  //     { className: "app-content" },
+  //     React.createElement("h1", {}, ""),
+  //     React.createElement(TaskViewer, { taskList: data })
+  //   )
+  // );
   // afisare normala jsx
 
-  // return (
-  //   <div className="App">
-  //     <div className="app-content">
-  //       <h1>Task Manager</h1>
-  //       <TaskViewer taskList={data} />
-  //     </div>
-  //   </div>
-  // );
+  return (
+    <div className="App">
+      <div className="app-content">
+        <h1>Task Manager</h1>
+        <TaskViewer taskList={data} />
+      </div>
+    </div>
+  );
 }
 
 export default App;
