@@ -1,11 +1,14 @@
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.task-viewer-container {
+  background-color: #f3f3fb;
+  border-radius: 50px;
+  padding: 80px;
+  overflow-y: scroll;
 }
-.card-header p {
-  font-size: 14px;
-  line-height: 17px;
-  color: #b9b9b9;
-  font-weight: 700;
+
+.task-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(min-content, max-content);
+  justify-items: center;
+  gap: 40px 50px;
 }

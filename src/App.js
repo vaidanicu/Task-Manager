@@ -1,6 +1,5 @@
 import "./App.css";
 import TaskViewer from "./components/task-viewer/TaskViewer";
-import TaskContainer from "./components/task-viewer/TaskViewer";
 
 function App() {
   const data = [
@@ -22,11 +21,26 @@ function App() {
       Name: "ex3",
       dueDate: new Date(2023, 7, 27),
     },
+    {
+      id: "T - 4",
+      Status: "Complete",
+      Name: "ex3",
+      dueDate: new Date(2023, 7, 27),
+    },
+    {
+      id: "T - 5",
+      Status: "Complete",
+      Name: "ex3",
+      dueDate: new Date(2023, 7, 27),
+    },
   ];
 
   return (
     <div className="App">
-      <TaskViewer taskList={data} />
+      <div className="app-content">
+        <h1>Task Manager</h1>
+        <TaskViewer taskList={data} />
+      </div>
     </div>
   );
 }
