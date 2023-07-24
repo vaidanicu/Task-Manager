@@ -11,36 +11,6 @@ const CreateTaskForm = () => {
     taskDetails: "",
   });
 
-  const handleNameChange = (event) => {
-    //   setTaskName(event.target.value);
-    setFormData((prevState) => {
-      return {
-        ...prevState,
-        taskName: event.target.value,
-      };
-    });
-  };
-
-  const handleDateChange = (event) => {
-    // setDueDate(event.target.value);
-    setFormData((prevState) => {
-      return {
-        ...prevState,
-        dueData: event.target.value,
-      };
-    });
-  };
-
-  const handleDetailsChange = (event) => {
-    // setTaskDetails(event.target.value);
-    setFormData((prevState) => {
-      return {
-        ...prevState,
-        taskDetails: event.target.value,
-      };
-    });
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     // const newTask = {
@@ -53,13 +23,24 @@ const CreateTaskForm = () => {
     console.log("formData", formData);
   };
 
+  const handleInputChange = (event) => {
+    console.log(event.target.name);
+    setFormData((prevDate) => {
+      return {
+        ...prevDate,
+        [event.target.name]: event.target.value,
+      };
+    });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <label className="label-md">Task Name</label>
           <input
-            onChange={handleNameChange}
+            name="taskName"
+            onChange={handleInputChange}
             className="input-primary"
             type="text"
           />
@@ -68,7 +49,8 @@ const CreateTaskForm = () => {
         <div className="form-row">
           <label className="label-md">Due Date</label>
           <input
-            onChange={handleDateChange}
+            name="dueData"
+            onChange={handleInputChange}
             className="input-primary"
             type="date"
           />
@@ -76,9 +58,9 @@ const CreateTaskForm = () => {
         <div className="form-row">
           <label className="label-md">Task Details</label>
           <textarea
-            onChange={handleDetailsChange}
+            name="taskDetails"
+            onChange={handleInputChange}
             className="input-primary"
-            name=""
             id=""
             cols="30"
             rows="10"
