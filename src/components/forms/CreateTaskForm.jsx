@@ -1,36 +1,40 @@
 import React, { useState } from "react";
 import "./CreateTaskForm.css";
 const CreateTaskForm = () => {
-  // const [taskName, setTaskName] = useState("");
-  // const [dueDate, setDueDate] = useState("");
-  // const [taskDetails, setTaskDetails] = useState("");
+  const [taskName, setTaskName] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const [taskDetails, setTaskDetails] = useState("");
 
-  const [formData, setFormData] = useState({
-    taskName: "",
-    dueData: "",
-    taskDetails: "",
-  });
+  const handleNameChange = (event) => {
+    setTaskName(event.target.value);
+  };
+
+  const handleDateChange = (event) => {
+    setDueDate(event.target.value);
+  };
+
+  const handleDetailsChange = (event) => {
+    setTaskDetails(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const newTask = {
-    //   name: taskName,
-    //   dueDate: dueDate,
-    //   taskDetails: taskDetails,
-    //   status: "ToDo",
-    // };
+    console.log("Task=", dueDate);
+    console.log("2=", taskName);
+    console.log("3=", taskDetails);
 
-    console.log("formData", formData);
-  };
+    const newTask = {
+      name: taskName,
+      dueDate: dueDate,
+      taskDetails: taskDetails,
+      status: "ToDo",
+    };
+    //Controlled inputs
+    setTaskName("");
+    setDueDate("");
+    setTaskDetails("");
 
-  const handleInputChange = (event) => {
-    console.log(event.target.name);
-    setFormData((prevDate) => {
-      return {
-        ...prevDate,
-        [event.target.name]: event.target.value,
-      };
-    });
+    console.log(newTask);
   };
 
   return (
@@ -39,8 +43,10 @@ const CreateTaskForm = () => {
         <div className="form-row">
           <label className="label-md">Task Name</label>
           <input
+            //Controlled inputs
+            value={taskName}
             name="taskName"
-            onChange={handleInputChange}
+            onChange={handleNameChange}
             className="input-primary"
             type="text"
           />
@@ -49,8 +55,9 @@ const CreateTaskForm = () => {
         <div className="form-row">
           <label className="label-md">Due Date</label>
           <input
+            value={dueDate}
             name="dueData"
-            onChange={handleInputChange}
+            onChange={handleDateChange}
             className="input-primary"
             type="date"
           />
@@ -58,8 +65,9 @@ const CreateTaskForm = () => {
         <div className="form-row">
           <label className="label-md">Task Details</label>
           <textarea
+            value={taskDetails}
             name="taskDetails"
-            onChange={handleInputChange}
+            onChange={handleDetailsChange}
             className="input-primary"
             id=""
             cols="30"
