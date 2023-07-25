@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CreateTaskForm.css";
-const CreateTaskForm = () => {
+const CreateTaskForm = (props) => {
   const [taskName, setTaskName] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [taskDetails, setTaskDetails] = useState("");
@@ -24,11 +24,13 @@ const CreateTaskForm = () => {
     console.log("3=", taskDetails);
 
     const newTask = {
-      name: taskName,
+      Name: taskName,
       dueDate: dueDate,
       taskDetails: taskDetails,
       status: "ToDo",
     };
+    props.addNewTask(newTask);
+
     //Controlled inputs
     setTaskName("");
     setDueDate("");
