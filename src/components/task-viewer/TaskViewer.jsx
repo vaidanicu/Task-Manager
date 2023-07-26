@@ -9,7 +9,7 @@ function TaskViewer(props) {
           <h3 className="view-title">Task</h3>
           <p className="subtitle">Your tasks in your space.</p>
         </div>
-        <button className="button-primary" type="submit">
+        <button onClick={props.onCreateClick} className="button-primary">
           Create Task
         </button>
       </div>
