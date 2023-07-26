@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import TaskViewer from "./components/task-viewer/TaskViewer";
 import CreateTaskForm from "./components/forms/CreateTaskForm";
+import Modal from "./components/modal/Modal";
+
 const data = [
   {
     id: "T - 1",
@@ -60,6 +62,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Modal />
     </div>
   );
 }
