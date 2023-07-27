@@ -1,0 +1,16 @@
+.task-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(min-content, max-content);
+  justify-items: center;
+  gap: 40px 50px;
+}
+
+.view-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -0.02em;
+  color: #101c56;
+}

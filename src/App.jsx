@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import TaskViewer from "./components/task-viewer/TaskViewer";
-import CreateTaskForm from "./components/forms/CreateTaskForm";
-import Modal from "./components/modal/Modal";
 
 const data = [
   {
@@ -39,7 +37,6 @@ const data = [
 
 function App() {
   const [taskList, setTaskList] = useState(data);
-  const [isOpen, setIsOpen] = useState(false);
 
   const OnNewTaskAdd = (newTask) => {
     console.log("task from App.js", newTask);
@@ -51,34 +48,13 @@ function App() {
         id: "T-" + prevState.length + 1,
       },
     ]);
-    setIsOpen(false);
   };
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
   return (
     <div className="App">
       <div className="app-content">
-        <TaskViewer onCreateClick={openModal} taskList={taskList} />
-
-        <div className="side-bar-right">
-          {/* <div className="card-xl">
-            <h3>Create task</h3>
-            <CreateTaskForm addNewTask={OnNewTaskAdd} />
-          </div> */}
-        </div>
+        <TaskViewer OnNewTaskAdd={OnNewTaskAdd} taskList={taskList} />
       </div>
-      <Modal onClose={closeModal} isOpen={isOpen}>
-        <div className="card-xl">
-          <h3>Create task</h3>
-          <CreateTaskForm addNewTask={OnNewTaskAdd} />
-        </div>
-      </Modal>
     </div>
   );
 }
