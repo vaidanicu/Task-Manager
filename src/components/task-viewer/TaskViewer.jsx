@@ -3,15 +3,16 @@ import "../task-viewer/TaskViewer.css";
 import ControlPanel from "../control-panel/ControlPanel";
 
 function TaskViewer(props) {
+  const todoItems = props.taskList.filter((item) => item.status === "ToDo");
+
   return (
     <div className="task-viewer-container">
       <ControlPanel OnNewTaskAdd={props.OnNewTaskAdd} />
       <div className="task-list-container">
-        {props.taskList.map((item, index) => {
+        {todoItems.map((item) => {
           return (
             <TaskCard
-              //sau ley={item.id}
-              key={index}
+              key={item.id}
               Id={item.id}
               status={item.status}
               Name={item.Name}

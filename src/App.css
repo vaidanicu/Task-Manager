@@ -7,7 +7,7 @@
 .app-content {
   flex: 1;
   display: grid;
-  grid-template-columns: auto minmax(20%, 300px);
+  grid-template-columns: auto minmax(80%);
   gap: 40px;
 }
 .app-content h1 {

@@ -14,3 +14,9 @@
   letter-spacing: -0.02em;
   color: #101c56;
 }
+
+.control-panel-container {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
