@@ -19,4 +19,5 @@
   display: flex;
   justify-content: space-between;
   height: 60px;
+  padding-bottom: 50px;
 }
