@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ControlPanel.css";
 import Modal from "../modal/Modal";
 import CreateTaskForm from "../forms/CreateTaskForm";
 
 const ControlPanel = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen, OnNewTaskAdd, taskList } = props;
 
   const openModal = () => {
     setIsOpen(true);
@@ -15,7 +15,7 @@ const ControlPanel = (props) => {
   };
 
   const handleNewTask = (task) => {
-    props.OnNewTaskAdd(task);
+    OnNewTaskAdd(task);
     closeModal();
   };
   return (
@@ -24,9 +24,12 @@ const ControlPanel = (props) => {
         <h3 className="view-title">Task</h3>
         <p className="subtitle">Your tasks in your space.</p>
       </div>
-      <button onClick={openModal} className="button-primary">
-        Create Task
-      </button>
+      {taskList.length > 0 && (
+        <button onClick={openModal} className="button-primary">
+          Create Task
+        </button>
+      )}
+
       <Modal onClose={closeModal} isOpen={isOpen}>
         <div className="card-xl">
           <h3>Create task</h3>

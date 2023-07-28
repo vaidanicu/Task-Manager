@@ -10,7 +10,7 @@ const EmptyListMessage = (props) => {
         <h3 className="view-title">No Tasks Yet</h3>
         <p className="subtitle">Get productive. Create a Task Now.</p>
         <button
-          onClick={() => props.onCreateTaskClick(true)}
+          onClick={() => props.onCreateTaskCrick(true)}
           className="button-primary btn-xl"
         >
           Create Task

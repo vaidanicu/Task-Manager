@@ -36,7 +36,7 @@ const data = [
 ];
 
 function App() {
-  const [taskList, setTaskList] = useState(data);
+  const [taskList, setTaskList] = useState([]);
 
   const OnNewTaskAdd = (newTask) => {
     console.log("task from App.js", newTask);
