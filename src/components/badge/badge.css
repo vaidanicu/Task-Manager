@@ -5,8 +5,27 @@
 }
 
 .badge p {
-  color: #808080;
   font-weight: 700;
   line-height: 14px;
   font-size: 12px;
+}
+
+.badge-todo {
+  background-color: #f2f2f2;
+  color: #f80a0a;
+}
+
+.badge-in-progress {
+  background-color: #f2f4fd;
+  color: rgb(0, 0, 249);
+}
+
+.badge-pending {
+  background-color: #fffdf5;
+  color: #df9a00;
+}
+
+.badge-completed {
+  background-color: #ffffff;
+  color: rgb(0, 250, 13);
 }
