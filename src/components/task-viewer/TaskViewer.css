@@ -10,3 +10,14 @@
 .task-viewer-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+.task-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(min-content, max-content);
+  justify-items: center;
+  gap: 40px 50px;
+}
+
+.task-list-grid {
+  display: contents;
+}
