@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import "./App.css";
 import TaskViewer from "./components/task-viewer/TaskViewer";
 
@@ -17,23 +17,19 @@ const data = [
   },
   {
     id: "T - 3",
-    status: "Complete",
-    Name: "ex3",
-    dueDate: new Date(2023, 7, 27),
-  },
-  {
-    id: "T - 4",
-    status: "Complete",
+    status: "Completed",
     Name: "ex3",
     dueDate: new Date(2023, 7, 27),
   },
   {
     id: "T - 5",
-    status: "Complete",
+    status: "Pending",
     Name: "ex3",
     dueDate: new Date(2023, 7, 27),
   },
 ];
+
+export const TodoContext = createContext();
 
 function App() {
   const [taskList, setTaskList] = useState(data);
@@ -53,7 +49,9 @@ function App() {
   return (
     <div className="App">
       <div className="app-content">
-        <TaskViewer OnNewTaskAdd={OnNewTaskAdd} taskList={taskList} />
+        <TodoContext.Provider value={taskList}>
+          <TaskViewer OnNewTaskAdd={OnNewTaskAdd} taskList={taskList} />
+        </TodoContext.Provider>
       </div>
     </div>
   );

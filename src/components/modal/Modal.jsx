@@ -18,7 +18,7 @@ const Modal = (props) => {
   return (
     <div className={`${isOpen ? "modal-wrapper" : "modal-hidden"}`}>
       <div className="modal-content">
-        <div className="card-xp">
+        <div className="card-xl">
           <div onClick={closeModal} className="close-button">
             <img src={CloseIcon} alt="close"></img>
           </div>

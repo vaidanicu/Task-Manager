@@ -1,24 +1,21 @@
 import "../badge/badge.css";
 
+const BADGE_COLORS = [
+  "grey",
+  "black",
+  "purple",
+  "orange",
+  "black",
+  "green",
+  "blue",
+];
+
 const Badge = (props) => {
-  const getBadgeStyle = () => {
-    switch (props.status) {
-      case "Todo":
-        return "badge-todo";
-      case "In Progress":
-        return "badge-in-progress";
-      case "Peanding":
-        return "badge-pending";
-      case "Complete":
-        return "badge-completed";
-      default:
-        return "badge-todo";
-    }
-  };
+  const badgeColor = BADGE_COLORS.includes(props.color) ? props.color : "grey";
 
   return (
-    <div className={`badge ${getBadgeStyle()}`}>
-      <p>{props.status}</p>
+    <div className={`badge ${badgeColor}`}>
+      <p>{props.label}</p>
     </div>
   );
 };
