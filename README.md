@@ -11,7 +11,9 @@ Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
 ## 🎞️ Live Preview 
-![image](https://github.com/vaidanicu/Task-Manager/assets/64326133/9d32dcf3-cb11-4ef3-ae8f-f00e16f34690 )
-![image](https://github.com/vaidanicu/Task-Manager/assets/64326133/abaf14d1-ef3f-4725-a1e4-b5acf059e346)
+![image](https://github.com/vaidanicu/Task-Manager/assets/64326133/9ca95901-a61f-4f41-b7be-076565fde029)
+
+![image](https://github.com/vaidanicu/Task-Manager/assets/64326133/5c605d6b-0fee-4b10-8c59-341dfd3c121d)
+
 
 
